@@ -5,7 +5,9 @@
   "main": "index.js",
   "homepage": "https://omarookolosio94.github.io/ariere",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/ --recursive",
+    "sass": "node-sass -w scss/ -o dist/pages --recursive",
+    "h-sass": "node-sass -w h-sass/ -o dist/ --recursive",
+    "a-sass": "node-sass -w a-sass/ -o dist/pages --recursive",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [

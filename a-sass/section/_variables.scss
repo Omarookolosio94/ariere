@@ -1,0 +1,309 @@
+//color variables
+$color-white: white;
+$color-black: black;
+
+//color for main pages
+$blue: rgba(48, 137, 190, 1);
+$transparent-blue: rgba(101, 184, 233, 0.8);
+
+$dark-white: rgba(darken($color-white, 30), 0.9);
+$light-white: rgba(227, 230, 233, 1);
+$transparent-white: rgba(227, 230, 233, 0.3);
+
+$dark-black: rgba(darken($color-black, 30), 0.9);
+$light-black: rgba(darken($color-black, 20), 0.8);
+
+//font-variable
+$font-arial: Arial, Helvetica, sans-serif;
+$font-monospace: monospace;
+$font-cursive: cursive;
+
+//button box-shadow
+$btn-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+$btn-hover-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+//card shadow
+$card-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+$card-hover-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+
+//mixins
+@mixin easeOut{
+  transition: all .5s ease-out;
+}
+
+@mixin easeIn{
+  transition: all .5s ease-in;
+}
+
+@mixin easeSlow{
+   transition: all .5s ease-in;
+ }
+
+@mixin reset-default {
+
+  *, html, body, div, dl, dt, dd, ul, ol, 
+  li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, 
+  p, blockquote, th, td {
+     margin: 0;
+     padding: 0;
+  }
+
+  table {
+     border-collapse: collapse; 
+     border-spacing: 0; 
+  }
+
+  fieldset, img {
+     border: 0; 
+  }
+
+  address, caption, cite, code, dfn, em, strong, th, var {
+     font-style: normal; 
+     font-weight: normal;
+  }
+
+  ol, ul, li {
+     list-style: none;
+  }
+
+  caption, th {
+     text-align: left;
+  }
+
+  h1, h2, h3, h4, h5, h6 { 
+     font-size: 100%;
+     font-weight: normal;
+  }
+
+  q:before, q:after {
+     content: '';
+  }
+
+  strong {
+     font-weight: bold;
+  }
+
+  em {
+     font-style: italic;
+  }
+
+  a, img { 
+     border: none;
+  } 
+
+  sup {
+     font-size: 50%; 
+  }
+
+  a, a:hover {
+     text-decoration: none;
+  }
+
+  a{
+     color: black;
+
+     &:hover{
+        color: $dark-white;
+     }
+
+     &:active{
+        color: $light-white;
+     }
+  }
+}
+
+//media query mixins
+
+//SMARTPHONES
+@mixin mediaSm{
+
+   @media screen and (max-width: 768px){
+     @content;
+   } 
+}
+ 
+ //TABLETS,SMALL LAPTOPS
+ @mixin mediaMd{
+
+   @media screen and (min-width: 450px) and (max-width: 768px){ 
+     @content;
+   } 
+}
+ 
+ //DESKTOPS,LAPTOPS
+ @mixin mediaLg{
+
+   @media screen and (min-width: 769px) and (max-width: 1100px){
+     @content;
+   } 
+}
+ 
+ //WIDESCREENS
+ @mixin mediaXl{
+    
+   @media screen and (min-width: 1101px){
+     @content;
+   } 
+}
+
+@mixin timeline{
+ //styling for timeline;
+   .timeline{
+      position: relative;
+      max-width: 500px;
+      margin: 2rem auto;
+      //border: 1px solid red;
+
+      &::after{
+         content:'';
+         position: absolute;
+         width: 2px;
+         background-color: $blue;
+         top: 0;
+         bottom: 0;
+         left: 50%;
+         margin-left: 2px;
+      }
+
+      //container around contents
+      .t-container{
+         position: relative;
+         margin: 2rem 0;
+         width: 50%;
+
+         //addding circles in timeline
+         &::after{
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: $color-white;
+            border: 1px solid $transparent-blue;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+
+         }
+
+         //place container to left side
+         &.left{
+            left: 0;
+
+            //adding arrows to the left side of the contents
+            &::before{
+               content:'';
+               height: 0;
+               position: absolute;
+               top: 22px;
+               width: 0;
+               z-index: 1;
+               right: .8rem;
+               border: medium solid $color-white;
+               border-width: 10px 0 10px 10px;
+               border-color: transparent transparent transparent $color-white;
+            }
+         }
+
+         //place container to right side
+         &.right{
+            left: 50%;
+
+            //adding arrows to the right side of the contents
+            &::before{
+               content: " ";
+               height: 0;
+               position: absolute;
+               top: 22px;
+               width: 0;
+               z-index: 1;
+               left: 1.2rem;
+               border: medium solid $color-white;
+               border-width: 10px 10px 10px 0;
+               border-color: transparent $color-white transparent transparent;             
+            }
+
+            &::after{
+               left: -10px;
+            }
+         }
+
+         .content{
+            padding: 1rem .4rem;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: $card-hover-shadow;
+
+            &.l-side{
+               margin-right: 1.4rem;
+            }
+
+            &.r-side{
+               margin-left: 1.8rem;
+            }
+
+            h4,p{
+               font-size: .8rem;
+               line-height: 1.4rem;
+            }
+            
+            h4{
+               margin-bottom: 1rem;
+               font-weight: 550;
+            }
+         }
+      }
+   }
+
+   @include mediaSm{
+
+      .timeline{
+         width: 90%;
+
+
+         &::after{
+            left: 0px;
+         }
+
+         .t-container{
+            width: 100%;
+
+            &.right, &.left{
+               left: 0;
+               
+               &::before{
+                  left: 1.2rem;
+                  border: medium solid $color-white;
+                  border-width: 10px 10px 10px 0;
+                  border-color: transparent $color-white transparent transparent;
+               }
+
+               &::after{
+                  left: -12px;
+               }
+
+            }
+
+            .content{
+
+               &.l-side,&.r-side{
+                  margin-right: 0;
+                  margin-left: 1.8rem;
+               }
+            }
+
+         }
+      }
+
+   }
+
+   @include mediaMd{
+
+      .timeline{
+         width:70%;
+      }
+
+   }
+
+}

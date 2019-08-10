@@ -1,177 +1,131 @@
-//article page styling
 .section-c{
+padding-bottom: 2rem;
 
-  //container for articles
   .container{
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $transparent-blue; 
+
+    h4.c-header{
+      width: 60%;
+      padding: .8rem 0;
+      font-size: 1.2rem;
+      border-bottom: 2px solid $transparent-blue;
+    }
   }
 }
 
-//container for articles
 .section-c .c-container{
+  width: 60%;
+}
+
+.section-c .c-article{
+  border-bottom: 1px solid $transparent-blue;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 2rem 0; 
+  margin: 2rem 0;
+  box-shadow: $card-shadow;
 
-}
+  .m-content{
+    margin: 0 auto;
+    width: 55%;
 
-
-//style for left section containing main articles
-.section-c .c-left{
-  width: 60%;
-  border-right: 1px solid $transparent-blue;
-  
-  article.main{
-    text-align: center;
-    border-bottom: 1px solid  $transparent-blue;
-
-    img{
-      width: 100%;
-      border-bottom: 4px solid $transparent-blue;
-      
+    h4{
+      padding-top: .8rem;
+      font-size: .8rem;
+      color: $dark-white;
     }
-
-    //main content features also repeated in side nav
-    .m-content{
-      position: relative;
-      text-transform: capitalize;
-      margin-bottom: 1rem;
-
-      h4{
-        position: absolute;
-        top: -1.5rem;
-        left: 40%;
-        background-color: $transparent-blue;
-        padding: 8px 16px;
-        width: auto;
-        margin: 0 auto;
-      }
-
-      //paragraph with details style
-      p.details{
-        padding-top: 1rem;
-        line-height: 1.4rem;
-        font-size: 1.5rem;
-        font-weight: 600;
-        width: 60%;
-        margin: 0 auto;
-      }
-      
-      //practicals with athours and positons
-      p.author{
-        padding-top: .8rem;
-        font-size: .8rem;
-        color: $dark-white;
-
-        //styling contributors spam section
-        span.name{
-          color: black;
-          font-weight: 600;
-        }
-      }
+    //paragraph with details style
+    h2.details{
+      padding: 1rem 0;
+      line-height: 1.4rem;
+      font-size: .8rem;
+      font-weight: 550;
+    }
     
+    p{
+      font-size: .8rem;
+      line-height: 1.4rem;
     }
 
-  }
+    //practicals with athours and positons
+    p.author{
+      padding-top: .8rem;
+      font-size: .8rem;
+      color: $dark-white;
 
-  .topics{
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    //justify-content: space-around;
-
-    //subtopics
-    article.sub-topic{
-      width: 48%;
-      display: flex;
-      margin: 1rem 2px;
-
-      &:first-child, &:nth-child(3){
-        border-right: 1px solid $transparent-blue;
-      }
-
-      img{
-        width: 100px;
-        height: 100px; 
-        margin-right: 10px;
-      }
-
-      .s-content{
-        //width: 60%;
+      //styling contributors spam section
+      span.name{
         text-transform: capitalize;
-        margin-right: 5px;
-
-        h4{
-          line-height: 1.4rem;
-          font-weight: 600;
-        }
-
-        p{
-          padding-top: .8rem;
-          font-size: .8rem;
-          color: $dark-white;
-
-          span.name{
-            color: black;
-            font-weight: 600;
-          }
-        }
+        color: black;
+        font-weight: 550;
       }
     }
 
-  }
-}
+    .m-social{
+      margin-top: 1rem;
+      overflow: hidden;
 
-//right section containing two sub articles
-.section-c .c-right{
-  text-transform: capitalize;
-  width: 35%;
-  margin: 0 auto;
-  //padding: 0 1rem;
-
-  article.sub-topic{
-    border-bottom: 1px solid $transparent-blue;
-    margin-bottom: 1.3rem;
-    
-    &:last-child{
-      border-bottom: none;
-    }
-
-    img{
-      width: 100%;
-      border-bottom: 4px solid $transparent-blue;
-    }
-
-    .s-content{
-
-      h4{
-        padding-top: .8rem;
-        font-size: .8rem;
-
-      }
-
-      p.details{
-        padding: 1rem 0;
-        line-height: 1.4rem;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-      p.author{
-        padding: .8rem 0;
+      i{
+        margin-right: 1rem;
         font-size: .8rem;
         color: $dark-white;
+      }
+      
+      .hidden{
+        position: relative;
+        display: inline-block;
+        left: -200px;
+        width: 200px;
+        z-index: -1;
+        transition: all .3s ease-in;
 
-        //styling contributors spam section
-        span.name{
-          color: black;
-          font-weight: 600;
+        i{
+          color: $color-black;
         }
+
+      }
+    }
+
+    &:hover{
+
+      i.fas.fa-share{
+        color: $color-black;
+      }
+
+      .hidden{
+        left: 0;
       }
     }
   }
 
+  img{
+    margin: 0 8px;
+    width: 250px;
+    height: 150px;
+  }
+
+}
+
+.section-c .c-button{
+  padding-top: 2rem;
+  width: 60%;
+  text-align: center;
+
+  .submit{
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    text-transform: capitalize;
+    font-size: .6rem;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $color-white;
+    box-shadow: $card-shadow;
+
+    &:hover{
+      box-shadow: $card-hover-shadow;
+    }
+  }
 }

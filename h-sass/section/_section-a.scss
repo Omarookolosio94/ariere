@@ -1,0 +1,50 @@
+//landing page 
+#section-a{
+  padding-top: 2rem;
+  background: url('./img/engineering.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
+  box-shadow: $card-shadow;
+
+  //landing page container
+  .container{
+    width: 100%;
+    margin: 10% auto;
+    text-align: center;
+  }
+}
+
+//landing page details
+#section-a .details{
+  margin: 0 auto;
+  width: 80%;
+
+  h1,i,p{
+    margin-bottom: 1rem;
+    font-size: .8rem;
+    line-height: 1.4rem;
+  }
+
+  i{
+    font-size: 2rem;
+  }
+  
+}
+
+//landing page button style
+#section-a button{
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  font-size: .6rem;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  box-shadow: $card-shadow;
+
+  &:hover{
+    box-shadow: $card-hover-shadow;
+  }
+}

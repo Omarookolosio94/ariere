@@ -2,74 +2,50 @@
 /*got really tired of writing comments not my fault don't know the english to use nor blame me*/
 @include mediaSm{
 
-  header{
-
-    .sidenav{
-      width: 50vw;
-      left: -50vw;
-    }
-  }
- 
+  //media query for section a
   #section-a{
-    
-    .container{
-      padding: 1rem 0;
-  
-    }
-  }
 
-  .section-b{
-    
-    .b-left{
+    .container{
+      width: 90%;
+    }
+
+    .details{
       width: 100%;
 
-      .topics{
-        display: block;
-
-        article.sub-topic{
-          width: 100%;
-          margin: 2rem auto;
-        }
+      p{
+        text-align: left;
       }
     }
+  }
 
-    .b-right{
+  //secton b query making service links 
+  .section-b{
+
+    .container{
+      width: 95%;
+    }
+
+    .s-container{
       display: block;
 
-      article.sub-topic{
+      .service{
         width: 100%;
-        margin: 2rem auto;
       }
     }
-
   }
 
-  .section-c{
+  .section-d{
 
-    .container h4.c-header{
-      width: 100%;
+    .container{
+      width: 90%;
     }
-    .c-container{
-      width: 100%;
-    }
+    
+    .s-container{
 
-    .c-article{
-      flex-direction: column-reverse;
-
-      .m-content{
+      li.staff{
         width: 90%;
       }
-      
-      img{
-        margin: 0 auto;
-        width: 200px;
-      }
     }
-
-    .c-button{
-      width: 100%;
-    }
-
   }
 
   footer{
@@ -101,53 +77,42 @@
 
 @include mediaMd{
 
+  #section-a{
+
+    .container{
+      width: 85%;
+    }
+  }
+
   .section-b{
+
     .container{
-      //border: 1px solid red;
-      width: 80%;
+      width: 85%;
     }
 
-    .b-left{
-      .topics{
+    .s-container .service{
+      width: 90%;
+    }
+  }
 
-        article.sub-topic{
-          width: 80%;
-        }
-      }
+  .section-d{
+    
+    .container{
+      width: 90%;
     }
 
-    .b-right{
+    .s-container{
 
-      article.sub-topic{
-        width: 80%;
+      li.staff{
+        width: 45%;
       }
     }
   }
 
-  .section-c{
-
-    .container{
-      width: 70%;
-    }
-
-    .c-article{
-
-      .m-content{
-        width: 80%;
-      }
-
-      img{
-        width: 250px;
-      }
-    }
+  footer .container{
+    width: 80%;
   }
-
-  footer{
-
-    .container{
-      width: 80%;
-    }
-  }
+ 
 }
 
 @include mediaLg{
@@ -192,41 +157,22 @@
     }
   }
   
-  .section-b .b-left{
-    width: 75%;
+ .section-d{
 
-    .topics{
-      article.sub-topic{
-        width: 45%;
-      }
-    }
+  .container{
+    width: 95%;
   }
+ }
 
-  .section-c{
+ footer{
 
-    .c-container{
-      width: 70%;
-    }
-
-    .c-article{
-      .m-content{
-        margin: 0 1rem;
-      }
-    }
+  .container{
+    width: 90%;
   }
- 
+ }
 }
 
 @include mediaXl{
-
-  .section-c{
-
-    .c-article{
-      .m-content{
-        margin: 0 1rem;
-      }
-    }
-  }
 
   header{
 

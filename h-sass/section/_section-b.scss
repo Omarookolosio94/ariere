@@ -1,61 +1,71 @@
-//article page styling
-.section-b{
-  padding: 3rem 0;
+//featured articles section
+h1.heading{
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  padding: .8rem 0;
+  margin: 2rem 0;
+  border-bottom: 2px solid $transparent-blue;
+}
 
-  //container for articles
+//featured articles
+#section-b{
+
   .container{
     width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding-bottom: 1rem;
   }
-}
-
-//container for articles
-.section-b .b-container{
-  display: block;
 
 }
 
+//featured aarticle section container
+#section-b .topic-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-//style for left section containing main articles
-.section-b .b-left{
+//main article sections
+#section-b .b-left{
   width: 60%;
-  padding-bottom: 1rem;
-  
+
+  //stying main article 
   article.main{
     text-align: center;
     box-shadow: $card-shadow;
 
     img{
       width: 100%;
-      border-bottom: 4px solid $transparent-blue;
-      
+      border-bottom: 4px solid $transparent-blue;  
     }
 
     //main content features also repeated in side nav
     .m-content{
       position: relative;
       text-transform: capitalize;
-      padding-bottom: 1rem;
+      padding: 1rem 0;
 
       h4{
         position: absolute;
         top: -1.5rem;
-        left: 40%;
+        left: 45%;
+        font-size: .8rem;
         background-color: $transparent-blue;
         padding: 8px 16px;
-        font-size: .8rem;
         width: auto;
         margin: 0 auto;
       }
 
       //paragraph with details style
       p.details{
-        padding-top: 1rem;
+        padding: 1rem 0;
         line-height: 1.4rem;
         font-size: .8rem;
         font-weight: 550;
         width: 60%;
         margin: 0 auto;
+
       }
       
       //practicals with athours and positons
@@ -70,36 +80,46 @@
           font-weight: 550;
         }
       }
-    
     }
+
   }
 
+  //container for sub-topics 
   .topics{
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    //justify-content: space-around;
+    justify-content: space-around;
 
     //subtopics
     article.sub-topic{
       width: 48%;
-      margin: 1rem 5px;
-      padding: 1rem 0;
+      display: flex;
+      margin: 2rem 2px;
       box-shadow: $card-shadow;
+      padding: 1rem 0;
+
+      img{
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+      }
 
       .s-content{
+        margin-left: 10px;
         text-transform: capitalize;
-        margin:0 8px;
 
         h4{
-          font-size: .8rem;
           line-height: 1.4rem;
+          font-size: .8rem;
           font-weight: 550;
+  
         }
 
         p{
           padding-top: .8rem;
           font-size: .8rem;
+          line-height: 1.4rem;
           color: $dark-white;
 
           span.name{
@@ -109,36 +129,44 @@
         }
       }
     }
-
   }
 }
 
-//right section containing three sub articles
-.section-b .b-right{
-  display: flex;
+#section-b .b-right{
+  
   text-transform: capitalize;
-  width: 100%;
-  margin: 0 auto;
-  justify-content: space-between;
-  padding: 2rem 0 1rem;
+  width: 35%;
+  padding: 1rem 0;
+  box-shadow: $card-shadow;
 
-  article.sub-topic{
-    width: 30%;
-    margin-bottom: 1.3rem;
-    box-shadow: $card-shadow;
-    
-    img{
-      width: 100%;
-      border-bottom: 4px solid $transparent-blue;
-    }
 
-    .s-content{
-      margin: 0 1rem;
+  h1{
+    text-align: center;
+    padding: 8px 16px;
+    font-size: .8rem;
+    line-height: 1.4rem;
+  }
+
+  ul.popular-list{
+      
+    li{
+      width: 90%;
+      margin: 0 auto;
+      padding: 1rem 0;
+      border-bottom: 1px solid $transparent-blue;
+
+      &:first-child{
+        border-top: 1px solid $transparent-blue;
+      }
+
+      &:last-child{
+        border-bottom: none;
+      }
 
       h4{
         padding-top: .8rem;
         font-size: .8rem;
-
+ 
       }
 
       p.details{
@@ -151,6 +179,7 @@
       p.author{
         padding: .8rem 0;
         font-size: .8rem;
+        line-height: 1.4rem;
         color: $dark-white;
 
         //styling contributors spam section
@@ -161,5 +190,4 @@
       }
     }
   }
-
 }

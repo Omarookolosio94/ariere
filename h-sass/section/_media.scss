@@ -13,63 +13,82 @@
   #section-a{
     
     .container{
-      padding: 1rem 0;
-  
+      margin: 20% auto;
+    
     }
   }
 
-  .section-b{
-    
+  #section-b{
+
+    .container{
+      width: 90%;
+    }
+
+    .topic-container{
+      display: block;
+    }
+
     .b-left{
       width: 100%;
+      border-right: none;
+    }
+    
+    .b-left .topics{
+      display: block;
 
-      .topics{
-        display: block;
+      article.sub-topic{
+        width: 80%;
+        margin: 2rem auto;
 
-        article.sub-topic{
-          width: 100%;
-          margin: 2rem auto;
+        &:first-child{
+          border-right: none;
         }
       }
     }
 
     .b-right{
-      display: block;
-
-      article.sub-topic{
-        width: 100%;
-        margin: 2rem auto;
-      }
+      width: 80%;
+      margin: 0 auto;
     }
 
   }
 
   .section-c{
 
-    .container h4.c-header{
-      width: 100%;
+    .container{
+      width: 90%;
     }
+
     .c-container{
+      flex-direction: column;
+    }
+
+    .c-left{
       width: 100%;
-    }
+      border-right: none;
 
-    .c-article{
-      flex-direction: column-reverse;
-
-      .m-content{
-        width: 90%;
+      article.main .m-content h4{
+        left: 40%;
       }
-      
-      img{
-        margin: 0 auto;
-        width: 200px;
+
+      .topics{
+        display: block;
+
+        article.sub-topic{
+          width: 80%;
+          margin: 2rem auto;
+
+          &:first-child, &:nth-child(3){
+            border-right: none;
+          }
+    
+        }
       }
     }
 
-    .c-button{
-      width: 100%;
+    .c-right{
+      width: 80%;
     }
-
   }
 
   footer{
@@ -101,44 +120,17 @@
 
 @include mediaMd{
 
-  .section-b{
+  #section-b{
+
     .container{
-      //border: 1px solid red;
       width: 80%;
-    }
-
-    .b-left{
-      .topics{
-
-        article.sub-topic{
-          width: 80%;
-        }
-      }
-    }
-
-    .b-right{
-
-      article.sub-topic{
-        width: 80%;
-      }
     }
   }
 
   .section-c{
 
     .container{
-      width: 70%;
-    }
-
-    .c-article{
-
-      .m-content{
-        width: 80%;
-      }
-
-      img{
-        width: 250px;
-      }
+      width: 80%;
     }
   }
 
@@ -192,41 +184,44 @@
     }
   }
   
-  .section-b .b-left{
-    width: 75%;
+  #section-b{
 
-    .topics{
-      article.sub-topic{
-        width: 45%;
+    .b-left{
+
+      .topics{
+        display: block;
+
+        article.sub-topic{
+          width: 100%;
+
+          &:first-child{
+            border-right: none; 
+          }  
+        }
       }
     }
   }
 
   .section-c{
 
-    .c-container{
-      width: 70%;
-    }
+    .c-left{
 
-    .c-article{
-      .m-content{
-        margin: 0 1rem;
+      .topics{
+        display: block;
+
+        article.sub-topic{
+          width: 100%;
+
+          &:first-child, &:nth-child(3){
+            border-right: none;   
+          } 
+        }
       }
     }
   }
- 
 }
 
 @include mediaXl{
-
-  .section-c{
-
-    .c-article{
-      .m-content{
-        margin: 0 1rem;
-      }
-    }
-  }
 
   header{
 

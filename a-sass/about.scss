@@ -1,0 +1,17 @@
+@import "section/variables";
+
+@include reset-default;
+
+@import "section/header";
+
+@import "section/section-a";
+
+@import "section/section-b";
+
+@import "section/section-c";
+
+@import "section/section-d";
+
+@import "section/footer";
+
+@import "section/media";
